@@ -1,10 +1,18 @@
+// import Config from './config'
+
+// // charger la config
+// let config = await Config.getConfig()
+
+// // charger le chemin du serveur
+// let path = await fetch(config.getServerPath())
+
 // un fetch et une boucle pour afficher les produits de l'API
 fetch('http://localhost:3000/api/products/')
   .then(data => data.json())
   .then(jsonListProduct => {
     let contentToAdd = ''
     for (const jsonProduct of jsonListProduct) {
-      contentToAdd += `<a href="./product.html?id=${jsonProduct._id} ">
+      contentToAdd += `<a href="/front/html/product.html?id=${jsonProduct._id} ">
                                <article>
                                  <img src="${jsonProduct.imageUrl}" alt="${jsonProduct.altTxt} ">
                                  <h3 class="productName">${jsonProduct.name} </h3>
