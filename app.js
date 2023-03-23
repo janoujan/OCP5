@@ -6,6 +6,8 @@ const productRoutes = require('./routes/product');
 
 const app = express();
 
+app.options('*', cors())
+
 app.use(cors())
 
 // app.use((req, res, next) => {
